@@ -11,6 +11,13 @@ When and when not to use dataflow/FBP
 What is it particularly well suited for
 NB: potentially very subjective
 
+Domains where dataflow is commonly used
+
+* image processing
+* video compositing
+* audio processing
+
+
 
 Imperative concepts
 ====================
@@ -45,23 +52,29 @@ Flowbased concepts
 ==================
 TODO: refer out to books for source of definitions
 
-Component
-Process: Component instance
-Connection
-Graph: definition of 
-Network: Graph instance
+Central definitions
 
-components types
-    routers
-    filters
+* Component: 
+* Port:
+* Process: Component instance
+* Connection: 
+* Graph: definition of 
+* Network: Graph instance
+* Packet:
+* IIP:
 
-firing patterns
+Common classes of components
+
+* routers
+* filters
+
+Firing patterns
 
 
 Things hard to grasp
 ================
 For those used to imperative programming.
-Some of these might not be unique to
+Some of these might not be unique to dataflow/FBP
 
 asyncronous thinking
 multiple-entries of functions at later time
@@ -69,6 +82,8 @@ multiple-entries of functions at later time
 
 Software engineering
 ====================
+* organizing bigger systems
+* introducing FBP/dataflow in existing system
 * encapsulation
 * error handling
 * testing, verification
@@ -107,6 +122,11 @@ IDEA: use [Stack Overflow](stackoverflow.com)?
 * use SO comments etc to handle errata
 
 
+IDEA: verify code examples using tests
+
+* challenge: need to verify both imperative and FBP version
+* maybe use https://github.com/flowbased/fbp-spec or variation?
+
 References
 ===========
 
@@ -119,10 +139,12 @@ TODO: put whitepapers up online
 TODO: verify link
 * Alfredo ? http://flowbased.tk
 
-Help/docs in software
+Help/docs for particular dataflow software (could extract general lessons)
 
-* Pure Data
-* Lab
+* [Pure Data](https://puredata.info/docs/BooksAboutPd/), Max MSP
+* LabView
+* Blender, Nuke
+* Native Instruments
 
 
 

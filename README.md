@@ -114,10 +114,11 @@ Literature
 
 * J. Paul Morrison: Flow-based programming
 * Matt Charki: Dataflow & Reactive programming
-* Paul Tyarvidas whitepapers on bmFBP etc, http://wordpress.com/BitTyarvidas
+* Paul Tarvydas whitepapers on bmFBP etc, https://bittarvydas.wordpress.com/
 TODO: put whitepapers up online
 TODO: verify link
 * Alfredo ? http://flowbased.tk
+* http://expressionflow.com/
 
 Help/docs in software
 

@@ -95,7 +95,11 @@ composite data (structs, objects)
 collections (array, dictionary, sets)
 ----------------
 
-Dictionaries sometimes used for dynamic dispatch
+Dictionaries sometimes used for dynamic dispatch.
+*Dynamic dispatch* between finite set of dispatch handlers known at programming time:
+can be done by using a routing component to send input to correct handler,
+then using a merge component to send handler output to a single output
+Some FBP implementations allow changing components/networks on the fly. Only use as a last resort.
 
 
 Flowbased concepts
@@ -126,6 +130,7 @@ Things hard to grasp
 For those used to imperative programming.
 Some of these might not be unique to dataflow/FBP
 
+* data-driven programming, as opposed to instruction-driven
 * asyncronous thinking, multiple-entries of functions (at later time)
 
 
@@ -141,7 +146,7 @@ should (as opposed to could) be made.
 * introducing FBP/dataflow in existing system
 * encapsulation
 * error handling
-* testing, verification. TDD/BDD
+* testing, verification. TDD/BDD, static analysis
 * debugging. Breakpoints map to data breakpoints.
 * problem decomposition
 * general vs. specialized solutions
@@ -189,11 +194,13 @@ IDEA: verify code examples using tests
 * challenge: need to verify both imperative and FBP version
 * maybe use https://github.com/flowbased/fbp-spec or variation?
 
-IDEA: consider building a "cheat sheet"
+IDEA: consider building a reference / "cheat sheet"
 
 * Two-way mapping between concepts/patterns in imperative and FBP
 * Must be searchable
 * Should fit on couple of pages
+* Should potentially be cross-linked, because same 1 concept/pattern
+on one side may map to many concept on other
 
 References
 ===========

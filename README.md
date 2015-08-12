@@ -30,6 +30,14 @@ exclusive, but instead complimentary:
 * Can send/receive data from FBP network (short- or long-lived) in imperative code
 * Can use FBP for parts of problem, communicate using IPC/database
 
+Benefits of FBP
+============
+
+As compared to 'typical imperative code' (whatever that is...)
+
+* Enforced encapsulation. Ease of reasoning, testability
+* Executable architecture diagrams. Ease of onboarding, architecture discussion
+
 
 Imperative concepts
 ====================
@@ -152,6 +160,45 @@ should (as opposed to could) be made.
 * general vs. specialized solutions
 * managing changes in requirements
 
+
+## Introducing FBP in existing system
+
+### Extending versus embedding.*
+Two common approaches to gradually introducing FBP in a codebase
+
+1) Use it for the topmost architecture level.
+So there might be like ~5 components, each calling out to a large amount of imperative codes.
+Over time one can 'grow downwards', moving each below layer into FBP components/graphs.
+
+2) Introduce in a particular sub-system
+Identify a particular area which would benefit a lot from being FBPized, turn that into components+graphs.
+Use programmatic API of the FBP runtime to push data in/out of this as if it was standard imperative code (embedding).
+
+Easiest for code which already has a notion of independent 'components', with specific input and output data.
+
+### Components as wrappers
+
+It can be beneficial to have the FBP components be a thin wrapper around imperative functions/classes.
+This way one can reduce the changes required to existing imperative code,
+and the functionality can be still be accessed directly (without going through a FBP component).
+
+### Lifetime of FBP network(s)
+
+When embedding an FBP runtime, and running it from imperative code one needs to consider
+when to start/stop the network(s).
+
+For instance in an HTTP service, a FBP network could be started/stopped with the server,
+and all requests are processed in the same network instance.
+Alternatively, one could create/start/stop a FBP network for every request.
+
+A short lived network can make it easier to provide isolation;
+guarantee that multiple invocations (possibly concurrent) do not influence eachother.
+On the other hand, it becomes impossible to express (in FBP) how different invokation
+should/do influence eachother.
+
+Most FBP tools are geared towards long-lived networks.
+Depending on the startup costs of the network,
+short-lived networks might also have negative performance impact.
 
 
 How to create
